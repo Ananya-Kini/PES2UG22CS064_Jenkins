@@ -13,8 +13,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    // Intentional error: Trying to execute a non-existent file
-                    sh './main/wrong_output'
+                    sh './main/output'
                 }
             }
         }
