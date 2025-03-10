@@ -1,23 +1,23 @@
 pipeline {
     agent any
-    
+
     stages {
         stage('Build') {
             steps {
                 script {
-                    sh 'g++ main.cpp -o output'
+                    sh 'g++ main/hello.cpp -o main/output'
                 }
             }
         }
-        
+
         stage('Test') {
             steps {
                 script {
-                    sh './output'
+                    sh './main/output'
                 }
             }
         }
-        
+
         stage('Deploy') {
             steps {
                 echo "Deployment Successful"
